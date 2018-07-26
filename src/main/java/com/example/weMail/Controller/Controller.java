@@ -19,4 +19,14 @@ public class Controller {
 		System.out.println("list 사이즈 : " + mailService.getAllMail().size());
 		return "test";
 	}
+	
+	@RequestMapping(value="/hello")
+	public String hello(Model model) {
+		return "main";
+	}
+	
+	@RequestMapping(value="/loginPage")
+	public String loginPage(Model model) {
+		return "loginPage";
+	}
 }

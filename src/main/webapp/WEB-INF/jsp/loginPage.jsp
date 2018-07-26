@@ -43,7 +43,7 @@
                 onsubmit="return checkValue()">
         
             <!-- 이미지 추가 -->
-            <img src="../../img/welcome.png">
+            <img src="img/welcome.png" width="263" height="192">
             <br><br>
             
             <table>

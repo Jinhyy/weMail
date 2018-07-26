@@ -8,6 +8,6 @@
         <package name="com.example.weMail.Model"/>
     </typeAliases>
     <mappers>
-        <mapper resource="Mapper/mailMapper.xml"/>
+        <mapper resource="mapper/mailMapper.xml"/>
     </mappers>
 </configuration>
