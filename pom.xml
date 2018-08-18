@@ -5,7 +5,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>weMail</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>original</version>
 	<packaging>war</packaging>
 
 	<name>MavenServer</name>

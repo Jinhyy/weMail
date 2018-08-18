@@ -6,27 +6,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.weMail.Service.mailService;
+import com.example.weMail.Service.deptService;
 
 @org.springframework.stereotype.Controller
 public class Controller {
 	@Autowired
 	mailService mailService;
+	deptService deptService;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public String getAllMail(Model model) { 
-		// Model객체 : 컨트롤러에서 뷰로 전환할 때 데이터를 가지고 있는 객체, 컨트롤러가 뷰로 model 객체를 넘겨 뷰에서 model 객체의 데이터 이용 가능
-		model.addAttribute("mailList", mailService.getAllMail());
-		System.out.println("list 사이즈 : " + mailService.getAllMail().size());
-		return "test";
-	}
-	
-	@RequestMapping(value="/hello")
-	public String hello(Model model) {
+
+	@RequestMapping(value="/")
+	public String mainPage(Model model) {
 		return "main";
 	}
 	
 	@RequestMapping(value="/loginPage")
 	public String loginPage(Model model) {
 		return "loginPage";
+	}
+	
+	@RequestMapping(value="/registerPage")
+	public String registerPage(Model model) {
+		return "registerPage";
+	}
+	
+	@RequestMapping(value="/test")
+	public String test(Model model) {
+		model.addAttribute("deptList", deptService.getAllDept());
+		System.out.println("list 사이즈 : " + deptService.getAllDept().size());
+		return "test";
 	}
 }
