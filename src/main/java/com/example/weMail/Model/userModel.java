@@ -1,5 +1,8 @@
 package com.example.weMail.Model;
 
+import lombok.Data;
+
+@Data
 public class userModel {
 	/*
 	`userNo`         INT             NOT NULL    AUTO_INCREMENT COMMENT 'user_no', 
@@ -13,4 +16,7 @@ public class userModel {
     `gender`         char(10)        NOT NULL    COMMENT 'gender', 
     PRIMARY KEY (userNo)
 	 */
+	
+	int userNo,dept_no,position_no;
+	String user_id,user_password,user_name,slack_info,phone_num,gender;
 }

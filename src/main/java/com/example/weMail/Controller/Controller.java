@@ -28,15 +28,11 @@ public class Controller {
 		return "loginPage";
 	}
 	
-	@RequestMapping(value="/registerPage")
-	public String registerPage(Model model) {
-		return "registerPage";
-	}
-	
 	@RequestMapping(value="/subpage/test")
 	public String test(Model model) {
 		model.addAttribute("deptList", deptService.getAllDept());
 		System.out.println("list 사이즈 : " + deptService.getAllDept().size());
 		return "/subpage/test";
 	}
+	
 }
