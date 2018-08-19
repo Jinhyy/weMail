@@ -12,7 +12,8 @@
 <h1 align="center">weMail System</h1>
 <p align="center">
     <a href="<%=request.getContextPath() %>/?subpage=mailRead">읽기</a> | 
-    <a href="<%=request.getContextPath() %>/?subpage=mailWrite">쓰기</a>
+    <a href="<%=request.getContextPath() %>/?subpage=mailWrite">쓰기</a> |
+    <a href="<%=request.getContextPath() %>/?subpage=test">db테스트</a>
 </p>
 <hr>
  

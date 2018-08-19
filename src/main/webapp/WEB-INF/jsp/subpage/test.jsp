@@ -23,9 +23,9 @@
 		<c:when test="${deptList ne null}">
 			<c:forEach items="${deptList}" var="deptModel">
 				<tr>
-					<td>${deptModel.dept_no }</td>
-					<td>${deptModel.dept_name }</td>
-					<td>${deptModel.dept_location }</td>
+					<td>${deptModel.dept_no}</td>
+					<td>${deptModel.dept_name}</td>
+					<td>${deptModel.dept_location}</td>
 				</tr>
 			</c:forEach>
 		</c:when>

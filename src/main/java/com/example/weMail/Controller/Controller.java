@@ -12,11 +12,14 @@ import com.example.weMail.Service.deptService;
 public class Controller {
 	@Autowired
 	mailService mailService;
+	@Autowired
 	deptService deptService;
 	
 
 	@RequestMapping(value="/")
 	public String mainPage(Model model) {
+		model.addAttribute("deptList", deptService.getAllDept());
+		System.out.println("list 사이즈 main : " + deptService.getAllDept().size());
 		return "main";
 	}
 	
@@ -30,10 +33,10 @@ public class Controller {
 		return "registerPage";
 	}
 	
-	@RequestMapping(value="/test")
+	@RequestMapping(value="/subpage/test")
 	public String test(Model model) {
 		model.addAttribute("deptList", deptService.getAllDept());
 		System.out.println("list 사이즈 : " + deptService.getAllDept().size());
-		return "test";
+		return "/subpage/test";
 	}
 }
