@@ -10,4 +10,5 @@ import com.example.weMail.Model.userModel;
 public interface userMapper {
 	List<userModel> getAllUser();
 	void registerUser(userModel user);
+	String getPassword(userModel user);
 }

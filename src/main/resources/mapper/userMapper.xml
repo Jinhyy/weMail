@@ -20,6 +20,11 @@
     <select id="registerUser" resultType="com.example.weMail.Model.userModel">
         INSERT INTO user_table(user_id,user_password,slack_info,phone_num,user_name,gender,dept_no,position_no) 
         VALUES(#{user_id},#{user_password},#{slack_info},#{phone_num},#{user_name},#{gender},
-        #{dept_no},#{position_no});
+        #{dept_no},#{position_no})
 	</select>
+	<select id="getPassword" resultType="java.lang.String">
+        SELECT user_password from user_table
+        WHERE(user_id=#{user_id})
+	</select>
+	
 </mapper>

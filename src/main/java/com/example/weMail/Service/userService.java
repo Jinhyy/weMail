@@ -16,13 +16,13 @@ public class userService {
 
     @Autowired
     userMapper userMapper;
-  
+    passwordEncryption pwdInstance = new passwordEncryption();
+    
     public List<userModel> getAllUser() {
         return userMapper.getAllUser();
     }
     
     public void registerUser(userModel user) {
-    	passwordEncryption pwdInstance = new passwordEncryption();
     	try {
     		String encodedPassword = pwdInstance.getEncSHA256(user.getUser_password());
 			user.setUser_password(encodedPassword);
@@ -33,5 +33,25 @@ public class userService {
     	
     	userMapper.registerUser(user);
     	System.out.println(user.toString());
+    }
+    
+    public int loginUser(userModel user) {
+    	try {
+			String user_password = pwdInstance.getEncSHA256(user.getUser_password());
+			if(userMapper.getPassword(user).equals(user_password)) {
+				System.out.println("로그인성공");
+				return 1;
+			}
+			else {
+				System.out.println("로그인실패");
+				return -1;
+			}
+    	}
+			catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("로그인에러");
+			return 0;
+		}
     }
 }

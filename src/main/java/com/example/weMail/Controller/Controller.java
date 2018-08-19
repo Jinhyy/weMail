@@ -23,11 +23,6 @@ public class Controller {
 		return "main";
 	}
 	
-	@RequestMapping(value="/loginPage")
-	public String loginPage(Model model) {
-		return "loginPage";
-	}
-	
 	@RequestMapping(value="/subpage/test")
 	public String test(Model model) {
 		model.addAttribute("deptList", deptService.getAllDept());

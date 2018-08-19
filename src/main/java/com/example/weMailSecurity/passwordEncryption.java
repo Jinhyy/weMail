@@ -1,7 +1,7 @@
 package com.example.weMailSecurity;
 import java.security.MessageDigest;
 public class passwordEncryption {
-	public static String getEncSHA256(String txt) throws Exception{
+	public String getEncSHA256(String txt) throws Exception{
 	    StringBuffer sbuf = new StringBuffer();
 	     
 	    MessageDigest mDigest = MessageDigest.getInstance("SHA-256");
