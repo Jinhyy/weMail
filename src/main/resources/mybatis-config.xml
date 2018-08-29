@@ -9,5 +9,7 @@
     </typeAliases>
     <mappers>
         <mapper resource="mapper/mailMapper.xml"/>
+        <mapper resource="mapper/deptMapper.xml"/>
+        <mapper resource="mapper/userMapper.xml"/>
     </mappers>
 </configuration>

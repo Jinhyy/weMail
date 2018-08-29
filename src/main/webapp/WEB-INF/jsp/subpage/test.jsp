@@ -13,24 +13,24 @@
 <body>
 <table width="300" cellpadding="0" cellspacing="0" border="1" >
 		<tr>
-			<th>교수번호</th>
-			<th>교수이름</th>
-			<th>교수과목</th>
-			<th>교수생일</th>
+			<th>부서넘버</th>
+			<th>부서이름</th>
+			<th>부서위치</th>
 		</tr>
 		
 		<!--  if,else문 -->
 		<c:choose>
-		<c:when test="${mailList ne null}">
-			<c:forEach items="${mailList}" var="mailModel">
+		<c:when test="${deptList ne null}">
+			<c:forEach items="${deptList}" var="deptModel">
 				<tr>
-					<td>${mailModel.id }</td>
-					<td>${mailModel.name }</td>
+					<td>${deptModel.dept_no}</td>
+					<td>${deptModel.dept_name}</td>
+					<td>${deptModel.dept_location}</td>
 				</tr>
 			</c:forEach>
 		</c:when>
 		<c:otherwise>
-			professorList가 NULL입니다.
+			deptList가 NULL입니다.
 		</c:otherwise>
 		</c:choose>
 		

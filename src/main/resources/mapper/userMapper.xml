@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+
+<mapper namespace="com.example.weMail.Mapper.userMapper">
+		<resultMap id="userMapper" type="userModel">
+       		<result property="userNo" column="userNo" />
+       		<result property="user_id" column="user_id" />
+       		<result property="user_password" column="user_password" />
+       		<result property="user_name" column="user_name" />
+       		<result property="slack_info" column="slack_info" />
+       		<result property="phone_num" column="phone_num" />
+        	<result property="gender" column="gender" />
+        	<result property="dept_no" column="dept_no" />
+        	<result property="position_no" column="position_no" />
+        </resultMap>
+        
+    <select id="registerUser" resultType="com.example.weMail.Model.userModel">
+        INSERT INTO user_table(user_id,user_password,slack_info,phone_num,user_name,gender,dept_no,position_no) 
+        VALUES(#{user_id},#{user_password},#{slack_info},#{phone_num},#{user_name},#{gender},
+        #{dept_no},#{position_no})
+	</select>
+	<select id="getPassword" resultType="java.lang.String">
+        SELECT user_password from user_table
+        WHERE(user_id=#{user_id})
+	</select>
+	
+</mapper>
